@@ -13,23 +13,23 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.BeanProperty;
 import com.rofamex.springbootcrudsql.model.User;
+import com.rofamex.springbootcrudsql.model.Zipcode;
 
-@Component
 public class MainRoute {
-	private static final Logger LOG = LoggerFactory.getLogger(MainRoute.class);
-
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
+	private static final Logger LOG = LoggerFactory.getLogger(MainRoute.class);
 
 	public MainRoute() {
-		selectAllUsers();
+		selectAllZipcodes();
 	}
 
-	private void selectAllUsers() {
-		String sql = "Select * from user";
-		List<User> users = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(User.class));
+	private void selectAllZipcodes() {
+		String sql = "SELECT * FROM zipcode";
+		List<Zipcode> zipcodes = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Zipcode.class));
 
-		users.forEach(System.out::println);
+		zipcodes.forEach(System.out::println);
 	}
 
 }
