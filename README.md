@@ -1,7 +1,7 @@
 Simple connection with SQLServer
 only have select yet
 
-Project Dependencies
+# Project Dependencies
 
 ---Developer Tools  
 -Spring Boot DevTools  
