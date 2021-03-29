@@ -1,3 +1,6 @@
+Simple connection with SQLServer
+only have select yet
+
 Project Dependencies
 
 ---Developer Tools  
