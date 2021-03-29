@@ -1,6 +1,6 @@
 package com.rofamex.springbootcrudsql.model;
 
-public class User {
+public class Customer {
 	private String name;
 	private int age;
 	// private LocalDateTime createdDate;

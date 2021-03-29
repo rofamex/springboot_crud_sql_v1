@@ -11,7 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.rofamex.springbootcrudsql.model.Customer;
 import com.rofamex.springbootcrudsql.model.Zipcode;
+import com.rofamex.springbootcrudsql.rowmapper.UserRowMapper;
 
 @SpringBootApplication
 public class SpringbootCrudSqlApplication implements CommandLineRunner {
@@ -26,15 +28,24 @@ public class SpringbootCrudSqlApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		selectAllUsers();
+		selectAllCustomer();
 	}
 
-	private void selectAllUsers() {
+	private void selectAllZipcodes() {
 		String sql = "SELECT * FROM dbo.zipcode";
 		List<Zipcode> zipcodes = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Zipcode.class));
 
 		zipcodes.forEach(zipcode -> {
 			LOG.info("zipcode = {}", zipcode.getAddress());
+		});
+	}
+
+	private void selectAllCustomer() {
+		String sql = "SELECT * FROM dbo.customer";
+		List<Customer> customers = jdbcTemplate.query(sql, new UserRowMapper());
+
+		customers.forEach(customer -> {
+			LOG.info("name = {}, age = {}", customer.getName(), customer.getAge());
 		});
 	}
 
