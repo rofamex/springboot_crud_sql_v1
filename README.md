@@ -8,7 +8,7 @@ only have select yet
 
 ---SQL  
 -JDBC API  
--MS SQL Server Drive  
+-MS SQL Server Driver  
 
 ---Web  
 -Spring Web  
