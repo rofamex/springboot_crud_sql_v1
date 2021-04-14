@@ -1,14 +1,13 @@
 Simple connection with SQLServer
-only have select yet
 
 # Project Dependencies
 
----Developer Tools  
--Spring Boot DevTools  
+## Developer Tools  
+###### Spring Boot DevTools
 
----SQL  
--JDBC API  
--MS SQL Server Driver  
+## SQL
+###### JDBC API
+###### MS SQL Server Driver 
 
----Web  
--Spring Web  
+## Web  
+###### Spring Web
